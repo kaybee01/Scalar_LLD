@@ -14,7 +14,6 @@ public class PrintNumber implements Runnable {
 //    }
 
     public void run(){
-        System.out.println("Printing Number " +this.num+" " + Thread.currentThread().getName());
-
+       System.out.println("Printing Number " +this.num+" " + Thread.currentThread().getName());
     }
 }

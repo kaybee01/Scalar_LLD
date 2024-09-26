@@ -14,17 +14,15 @@ public class Adder implements Callable<Void> {
         this.l=l;
     }
 
-
-
-
     public Void call(){
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
 
             l.lock();
-            System.out.println("Lock acquired by add "+i);
+            System.out.println("Lock acquired by add "+i+" val = "+v.val);
 
-            this.v.val +=1;
-            l.unlock();
+//            this.v.val +=1;
+            this.v.inc(1);
+            this.l.unlock();
         }
         return null;
 
