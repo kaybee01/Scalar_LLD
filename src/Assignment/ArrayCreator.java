@@ -10,11 +10,15 @@ public class ArrayCreator implements Callable<ArrayList<Integer>> {
     ArrayCreator(int n){
         this.n=n;
     }
-    public ArrayList<Integer> call() throws ExecutionException, InterruptedException{
+
+    @Override
+    public ArrayList<Integer> call() throws Exception {
         ArrayList<Integer> al = new ArrayList<>();
         for (int i = 1; i < n; i++) {
             al.add(i);
+            System.out.println(Thread.currentThread().getName());
         }
         return al;
     }
 }
+

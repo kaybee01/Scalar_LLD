@@ -17,12 +17,13 @@ public class Subtractor implements Callable<Void> {
 
 
     public Void call(){
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 10; i++) {
 
             l.lock();
-            System.out.println("Lock acquired by Sub "+i);
+            System.out.println("Lock acquired by Sub "+i+" val = "+v.val);
 
-            this.v.val -=1;
+           // this.v.val -=1;
+            v.dec(1);
             l.unlock();
         }
         return null;
